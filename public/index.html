@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heimdall Links</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/svg+xml" href="heimdall.svg">
+</head>
+<body>
+<h1>Heimdall</h1>
+<div id="clock"></div>
+
+<div id="cards-container"></div>
+
+<!-- Botão e checkbox -->
+<div id="controls">
+  <button id="edit-mode-btn" title="Modo Edição">✏️</button>
+  <button id="add-link-btn" title="Adicionar Link">+</button>
+</div>
+
+
+<!-- Modal -->
+<div id="modal" class="modal">
+  <div class="modal-content">
+    <h2 id="modal-title">Adicionar Link</h2>
+    <label>Nome:</label>
+    <input type="text" id="modal-name">
+    <label>Link:</label>
+    <input type="text" id="modal-link">
+    <label>Ícone (emoji ou Unicode):</label>
+    <input type="text" id="modal-icon" placeholder="🎥">
+    <div class="modal-buttons">
+      <button id="save-btn">Salvar</button>
+      <button id="cancel-btn">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

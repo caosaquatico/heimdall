@@ -1,0 +1,8 @@
+<svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Tela do vídeo -->
+  <rect x="1.5" y="4" width="21" height="16" rx="3" ry="3" fill="#4CAF50" stroke="#333" stroke-width="1.5"/>
+  <!-- Triângulo de play estilizado -->
+  <polygon points="9,8 17,12 9,16" fill="#fff"/>
+  <!-- Detalhe de botão de gravação -->
+  <circle cx="18.5" cy="6.5" r="1.2" fill="#FF5722"/>
+</svg>
