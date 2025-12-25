@@ -5,5 +5,5 @@
 </p>
 
 <p>
-  é simples mais é do jeito que eu gosto, o icone pode ser jpg, svg
+  é simples mais é do jeito que eu gosto, o icone pode ser jpg, svg e png
 </p>
