@@ -10,16 +10,6 @@
     "link": "http://192.168.1.21:4533/"
   },
   {
-    "nome": "Stream Video",
-    "icone": "http://192.168.1.21/stream.svg",
-    "link": "http://192.168.1.21:3025"
-  },
-  {
-    "nome": "AddModel",
-    "icone": "✍️",
-    "link": "http://192.168.1.21:3025/addmodel"
-  },
-  {
     "nome": "vscode",
     "icone": "https://cdn.freebiesupply.com/logos/thumbs/2x/visual-studio-code-logo.png",
     "link": "http://192.168.1.21:8443"
