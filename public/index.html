@@ -11,11 +11,45 @@
 <h1>Heimdall</h1>
 <div id="clock"></div>
 
-<div id="cards-container"></div>
+<div id="main-container">
+  <div id="cards-container"></div>
+  <div id="calendar-notes">
+    <div id="calendar-panel">
+      <div id="calendar-header">
+        <button id="cal-prev" title="Mês anterior">‹</button>
+        <div id="calendar-title"></div>
+        <button id="cal-next" title="Próximo mês">›</button>
+      </div>
+      <div id="calendar-weekdays">
+        <div>Dom</div><div>Seg</div><div>Ter</div><div>Qua</div><div>Qui</div><div>Sex</div><div>Sáb</div>
+      </div>
+      <div id="calendar-grid"></div>
+
+      <div id="agenda">
+        <div class="section-title">Agenda</div>
+        <div id="agenda-date"></div>
+        <div id="agenda-list"></div>
+        <div id="agenda-input">
+          <input type="text" id="agenda-text" placeholder="Adicionar item">
+          <button id="agenda-add">Adicionar</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="notes-panel">
+      <div class="section-title">Nota</div>
+      <textarea id="notes-text" rows="10" placeholder="Escreva suas notas..."></textarea>
+      <div id="notes-actions">
+        <span id="notes-status"></span>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Botão e checkbox -->
 <div id="controls">
   <button id="edit-mode-btn" title="Modo Edição">✏️</button>
+  <button id="adult-toggle-btn" title="+18">🔞</button>
   <button id="add-link-btn" title="Adicionar Link">+</button>
 </div>
 
@@ -30,6 +64,12 @@
     <input type="text" id="modal-link">
     <label>Ícone (emoji ou Unicode):</label>
     <input type="text" id="modal-icon" placeholder="🎥">
+    <label>Categoria:</label>
+    <select id="modal-category">
+      <option value="site">🌐 Site</option>
+      <option value="local">🏠 App local</option>
+      <option value="adult">🔞 +18</option>
+    </select>
     <div class="modal-buttons">
       <button id="save-btn">Salvar</button>
       <button id="cancel-btn">Cancelar</button>

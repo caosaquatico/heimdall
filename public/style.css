@@ -10,7 +10,197 @@ body {
 
 h1 { margin-bottom: 20px; }
 
+#calendar-notes {
+  position: fixed;
+  top: 60px;
+  right: 20px;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 10;
+}
+
+#calendar-panel {
+  background: #1e1e1e;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+#notes-panel {
+  background: #e6b510;
+  border-radius: 10px;
+  padding: 10px;
+  color: #2b2205;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+#calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+#calendar-header button {
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: #2a2a2a;
+  color: #fff;
+  cursor: pointer;
+}
+
+#calendar-title {
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+#calendar-weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+  font-size: 11px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+#calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.calendar-day {
+  padding: 6px 0;
+  text-align: center;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #2a2a2a;
+  font-size: 12px;
+}
+
+.calendar-day.other-month {
+  opacity: 0.35;
+}
+
+.calendar-day.today {
+  outline: 1px solid #ff9900;
+}
+
+.calendar-day.selected {
+  background: #ff9900;
+  color: #111;
+}
+
+.calendar-day.has-event {
+  background: #ff9900;
+  color: #111;
+  font-weight: bold;
+}
+
+#agenda {
+  margin-top: 12px;
+}
+
+#agenda-date {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 6px;
+}
+
+#agenda-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+
+.agenda-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #2a2a2a;
+  padding: 6px 8px;
+  border-radius: 6px;
+  gap: 8px;
+}
+
+.agenda-remove {
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+#agenda-input {
+  display: flex;
+  gap: 8px;
+}
+
+#agenda-input input {
+  flex: 1;
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+}
+
+#agenda-input button {
+  border: none;
+  border-radius: 6px;
+  background: #ff9900;
+  color: #111;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+#notes-text {
+  width: 100%;
+  box-sizing: border-box;
+  background: #e0c35d;
+  color: #2b2205;
+  border: none;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 8px;
+  font-size: 12px;
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.08);
+}
+
+#notes-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 900px) {
+  #calendar-notes {
+    position: static;
+    width: 100%;
+    max-width: 360px;
+    margin: 10px 0 20px;
+  }
+}
+
 #cards-container {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 10px 0;
+  color: #875821;
+}
+
+.section-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 15px;
@@ -39,6 +229,8 @@ h1 { margin-bottom: 20px; }
 .card:hover { transform: scale(1.05); background: #2a2a2a; }
 .card i { font-size: 40px; margin-bottom: 10px; }
 .card span { font-weight: bold; text-align: center; }
+.card.dragging { opacity: 0.5; }
+.card.drag-over { box-shadow: inset 0 -3px 0 #ff9900; }
 
 .edit-btn {
   position: absolute;
@@ -82,6 +274,14 @@ h1 { margin-bottom: 20px; }
 
 #edit-mode-btn.active {
   background: #ff9900; /* cor diferente quando ativo */
+}
+
+#adult-toggle-btn {
+  background: #444;
+}
+
+#adult-toggle-btn.active {
+  background: #ff9900;
 }
 
 #add-link-btn {
@@ -137,6 +337,12 @@ h1 { margin-bottom: 20px; }
   border-radius: 5px;
   border: none;
 }
+.modal-content select {
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+  border: none;
+}
 
 .modal-buttons { display: flex; justify-content: space-between; }
 
@@ -150,4 +356,29 @@ h1 { margin-bottom: 20px; }
   padding: 5px 10px;
   border-radius: 8px;
   font-family: monospace;
+}
+
+
+
+
+#main-container {
+  display: flex;
+  gap: 20px; /* espaço entre painéis */
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap; /* ajuda em telas menores */
+}
+
+#calendar-notes {
+  position: static; /* tira o fixed */
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 1; /* não precisa ficar alto */
+}
+
+#cards-container {
+  flex: 1; /* ocupa espaço restante */
+  max-width: 1200px;
 }
