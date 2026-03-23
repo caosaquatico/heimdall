@@ -1,4 +1,4 @@
-![Printscreen](https://github.com/caosaquatico/heimdall/blob/main/capitura-de-tela)
+![Printscreen](https://github.com/caosaquatico/heimdall/blob/main/capitura-de-tela.png)
 
 <p>
   Para instalar so baixar e dar um npm i
